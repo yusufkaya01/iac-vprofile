@@ -62,7 +62,8 @@ jobs:
 
        - name: Terraform apply
          id: apple
-         if: github.ref == 'ref/heads/main' && github.event_name == 'push'
+         if: true
+         #if: github.ref == 'ref/heads/main' && github.event_name == 'push'
          run: terraform apply -auto-approve -input=false -parallelism=1 planfile
 
        - name: Configure AWS Credentials
